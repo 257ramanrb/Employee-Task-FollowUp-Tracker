@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane fx:controller="sample.controllerFiles.EmployeeDashBoard.TaskTab.TaskTabController"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            prefHeight="600.0" prefWidth="600.0" style="-fx-background-color:white">
+
+    <left>
+        <VBox style="-fx-background-color:#FFFFC2" spacing="10">
+            <Region prefHeight="180"/>
+            <Button onAction="#loadFxmlViewEditTask" text="View/Edit Task"
+                    prefWidth="230" prefHeight="40" style="-fx-background-color:#F9E79F"/>
+        </VBox>
+    </left>
+
+    <right>
+
+        <GridPane fx:id="contentAreaTask">
+            <fx:include source="ViewEditTaskButton.fxml"/>
+        </GridPane>
+
+    </right>
+
+
+</BorderPane>

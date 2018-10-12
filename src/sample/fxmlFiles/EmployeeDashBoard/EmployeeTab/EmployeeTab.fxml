@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:controller="sample.controllerFiles.EmployeeDashBoard.EmployeeTab.EmployeeTabController"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            prefHeight="600.0" prefWidth="600.0" style="-fx-background-color:white">
+
+    <left>
+        <VBox style="-fx-background-color:#FFFFC2" spacing="10">
+            <Region prefHeight="180"/>
+            <Button onAction="#loadFxmlViewEditEmployee" text="View/Edit Employee"
+                    prefWidth="230" prefHeight="40" style="-fx-background-color:#F9E79F"/>
+          </VBox>
+    </left>
+
+    <right>
+
+        <GridPane fx:id="contentAreaEmployee">
+            <fx:include source="ViewEditEmployeeButton.fxml"/>
+        </GridPane>
+
+    </right>
+
+
+</BorderPane>

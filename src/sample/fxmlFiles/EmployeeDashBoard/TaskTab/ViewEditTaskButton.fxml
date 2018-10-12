@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<ScrollPane fx:controller="sample.controllerFiles.EmployeeDashBoard.TaskTab.ViewEditTaskButtonController"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            prefHeight="548" prefWidth="1130" style="-fx-border-color:black; -fx-font-size:15">
+
+    <GridPane alignment="TOP_CENTER" hgap="12" vgap="12" style="-fx-background-color:white" prefWidth="1105">
+
+        <Label text="View/Edit Task" GridPane.columnSpan="4">
+            <padding>
+                <Insets left="200" bottom="15" top="10"/>
+            </padding>
+            <font>
+                <Font name="Verdana" size="26"/>
+            </font>
+        </Label>
+
+        <Label text="P.ID: " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="projCombo" onAction="#comboActionProj" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="200"/>
+
+        <Label text="P. Name: " GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <TextField fx:id="TFpName" GridPane.rowIndex="2" GridPane.columnIndex="3" editable="false" prefWidth="200"/>
+
+        <Label text="T.ID: " GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="taskCombo" onAction="#comboActionTask" GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="200"/>
+
+        <Label text="Task Name: " GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+        <TextField fx:id="TFtName" GridPane.rowIndex="4" GridPane.columnIndex="3" editable="false"/>
+
+        <Label text="Task Description: " GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextArea fx:id="TFtDesc" GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="3"
+                  prefHeight="100" editable="false" wrapText="true"/>
+
+        <Label text="E.ID (Forward To): " GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="empCombo" onAction="#comboActionEmp" GridPane.rowIndex="6" GridPane.columnIndex="1" prefWidth="200"/>
+
+        <Label text="E.Name: " GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+        <TextField fx:id="TFeName" GridPane.rowIndex="6" GridPane.columnIndex="3" editable="false"/>
+
+        <Label text="Start Date: " GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <TextField fx:id="TFtStartDate" GridPane.rowIndex="8" GridPane.columnIndex="1" editable="false"/>
+
+        <Label text="Deadline: " GridPane.rowIndex="8" GridPane.columnIndex="2"/>
+        <TextField fx:id="TFtDeadline" GridPane.rowIndex="8" GridPane.columnIndex="3"  editable="false"/>
+
+        <Label text="Status: " GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="statusCombo" GridPane.rowIndex="10" GridPane.columnIndex="1" promptText="Choose Status" prefWidth="200">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Open" />
+                    <String fx:value="Closed"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Label text="Comment History: " GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+        <TextArea fx:id="TFcomments" GridPane.rowIndex="11" GridPane.columnIndex="1" editable="false" GridPane.columnSpan="3"
+                  prefHeight="100" wrapText="true"/>
+
+        <TextField fx:id="TFenterCmnt" promptText="Enter comment..." GridPane.rowIndex="12" GridPane.columnIndex="1"
+                   GridPane.columnSpan="2"/>
+        <Button text="Comment" onAction="#addComment" prefWidth="120" GridPane.rowIndex="12" GridPane.columnIndex="3"/>
+
+        <Label text="Attachments: " GridPane.rowIndex="14" GridPane.columnIndex="0"/>
+        <ListView fx:id="filesListView" GridPane.rowIndex="14" GridPane.columnIndex="1" GridPane.columnSpan="2" prefHeight="140" prefWidth="100"/>
+        <Button text="Open" onAction="#openFile" GridPane.rowIndex="14" GridPane.columnIndex="3" prefWidth="120"/>
+
+        <TextField fx:id="TFattach" GridPane.rowIndex="15" GridPane.columnIndex="1" GridPane.columnSpan="2"
+                   promptText="Attach File..." editable="false"/>
+        <Button text="Browse..." onAction="#fileBrowse" prefWidth="120" GridPane.rowIndex="15" GridPane.columnIndex="3"/>
+
+        <Region prefHeight="20" GridPane.rowIndex="16"/>
+        <Button text="Save Changes" onAction="#saveChanges" GridPane.rowIndex="17" GridPane.columnIndex="1" prefWidth="200"/>
+        <Region GridPane.rowIndex="18" prefHeight="20"/>
+
+    </GridPane>
+
+</ScrollPane>

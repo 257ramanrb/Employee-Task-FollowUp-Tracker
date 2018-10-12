@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:controller="sample.controllerFiles.AdminDashBoard.ProjectTab.ProjectTabController"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            prefHeight="600.0" prefWidth="600.0" style="-fx-background-color:white">
+
+    <left>
+        <VBox style="-fx-background-color:#FFFFC2" spacing="10" prefWidth="230">
+            <Region prefHeight="150"/>
+            <Button onAction="#loadFxmlViewEditProject" text="View/Edit Project"
+                    prefWidth="230" prefHeight="40" style="-fx-background-color:#F9E79F"/>
+            <Button onAction="#loadFxmlAddProject" text="Add Project"
+                    prefWidth="230" prefHeight="40" style="-fx-background-color:#F9E79F"/>
+        </VBox>
+    </left>
+
+    <right>
+
+        <GridPane fx:id="contentAreaProject">
+            <fx:include source="ViewEditProjectButton.fxml"/>
+        </GridPane>
+
+    </right>
+
+</BorderPane>

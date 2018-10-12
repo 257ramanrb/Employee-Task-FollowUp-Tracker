@@ -1,0 +1,85 @@
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:controller="sample.controllerFiles.EmployeeDashBoard.EmployeeDashBoardController" stylesheets="@../../cssFiles/styleAdminDashBoard.css"
+            xmlns:fx="http://javafx.com/fxml" style="-fx-background-color:#ffffff; -fx-font-size:16" >
+    <top>
+
+        <BorderPane fx:id="topGrid" prefHeight="80">
+
+            <left>
+                <Label text="Dashboard (EMPLOYEE)" textFill="white">
+                    <padding>
+                        <Insets top="35" left="10" bottom="15"/>
+                    </padding>
+                    <font>
+                        <Font name="Verdana" size="24"/>
+                    </font>
+                </Label>
+            </left>
+
+            <right>
+                <HBox>
+                    <padding>
+                        <Insets top="20" right="10"/>
+                    </padding>
+                    <Button fx:id="employeeLogOut" onAction="#loadFxmlLoginPage" text="Log Out"
+                            prefWidth="85" prefHeight="30" style="-fx-background-color:#F39C12;">
+
+                    </Button>
+                </HBox>
+
+            </right>
+
+            <bottom>
+                <TabPane fx:id="tabPane">
+                    <padding>
+                        <Insets top="10"/>
+                    </padding>
+                    <tabs>
+                        <Tab text="Project"  closable="false" >
+                            <content>
+                                <fx:include source="ProjectTab/ProjectTab.fxml"></fx:include>
+                            </content>
+                        </Tab>
+
+                        <Tab text="Task" closable="false">
+                            <content>
+                                <fx:include source="TaskTab/TaskTab.fxml"></fx:include>
+                            </content>
+                        </Tab>
+
+                        <Tab text="Profile" closable="false">
+                            <content>
+                                <fx:include source="EmployeeTab/EmployeeTab.fxml"></fx:include>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </bottom>
+        </BorderPane>
+
+    </top>
+
+    <left>
+        <GridPane fx:id="leftGrid">
+
+        </GridPane>
+    </left>
+
+
+    <right>
+        <GridPane fx:id="rightGrid">
+
+        </GridPane>
+    </right>
+
+</BorderPane>

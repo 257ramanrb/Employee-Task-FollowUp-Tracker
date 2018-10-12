@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<GridPane fx:controller="sample.controllerFiles.AdminDashBoard.EmployeeTab.ViewEditEmployeeController"
+          xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="548" prefWidth="1200"
+          alignment="TOP_CENTER" hgap="15" vgap="20" style="-fx-border-color:black; -fx-font-size:15" >
+
+
+    <Label text="View/Edit Employee" GridPane.columnSpan="4">
+        <padding>
+            <Insets left="200" bottom="20" top="10"/>
+        </padding>
+        <font>
+            <Font name="Verdana" size="26"/>
+        </font>
+    </Label>
+
+    <Label text="E.ID :" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="empCombo" onAction="#comboAction" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="220"/>
+
+    <Label text="Employee Name :" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    <TextField fx:id="TFeName" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+
+    <Label text="Username :" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="TFeUsername" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+    <Label text="Password :" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+    <TextField fx:id="TFePassword" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+    <Label text="Email :" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="TFeEmail" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Phone :" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+    <TextField fx:id="TFePhone" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+
+    <Region prefHeight="10" GridPane.rowIndex="4"/>
+    <Label text="Tasks Assigned: " GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <ListView fx:id="taskListView" GridPane.rowIndex="5" GridPane.columnIndex="1" prefHeight="180" prefWidth="220"/>
+
+    <Label text="Projects Assigned: " GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+    <ListView fx:id="projListView" GridPane.rowIndex="5" GridPane.columnIndex="3" prefHeight="180" prefWidth="220"/>
+
+    <Region prefHeight="10" GridPane.rowIndex="6"/>
+    <Button text="Save Changes" onAction="#saveChanges" prefWidth="130" GridPane.rowIndex="7" GridPane.columnIndex="2"/>
+</GridPane>
